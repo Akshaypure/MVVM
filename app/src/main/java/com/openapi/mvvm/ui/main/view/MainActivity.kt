@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var viewModel: MainViewModel
     private lateinit var binding: ActivityMainBinding
-    lateinit var recyclerViewCritics: RecyclerView
+    private lateinit var recyclerViewCritics: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

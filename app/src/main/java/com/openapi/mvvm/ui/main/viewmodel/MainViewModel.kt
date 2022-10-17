@@ -1,6 +1,5 @@
 package com.openapi.mvvm.ui.main.viewmodel
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -20,10 +19,7 @@ class MainViewModel constructor(private val mainRepository: Repository) : ViewMo
     val movieList = MutableLiveData<List<MovieCritics>?>()
 
     fun getCriticsForMovies() {
-        Log.d("Thread Outside", Thread.currentThread().name)
-
         viewModelScope.launch {
-            Log.d("Thread Inside", Thread.currentThread().name)
             when (val response = mainRepository.getCriticsFor(movie = "godfather")) {
                 is NetworkState.Success -> {
                     movieList.postValue(response.data.movieCriticsList)

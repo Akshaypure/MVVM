@@ -2,13 +2,6 @@ package com.openapi.mvvm.data.model
 
 import com.google.gson.annotations.SerializedName
 
-data class ResponseWrapper(
-    @SerializedName("status")
-    val status: String,
-    @SerializedName("results")
-    val movieCriticsList: List<MovieCritics>
-    )
-
 data class MovieCritics(
     @SerializedName("display_title")
     val title: String,
@@ -24,7 +17,3 @@ data class MovieCritics(
     val multimedia: Multimedia?
     )
 
-data class Multimedia (
-    @SerializedName("src")
-    val src: String?
-    )
